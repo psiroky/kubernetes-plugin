@@ -79,6 +79,25 @@ public class ContainerTemplate extends AbstractDescribableImpl<ContainerTemplate
         this.args = args;
     }
 
+    public ContainerTemplate(ContainerTemplate from) {
+        this.setName(from.getName());
+        this.setImage(from.getImage());
+        this.setPrivileged(from.isPrivileged());
+        this.setAlwaysPullImage(from.isAlwaysPullImage());
+        this.setWorkingDir(from.getWorkingDir());
+        this.setCommand(from.getCommand());
+        this.setArgs(from.getArgs());
+        this.setTtyEnabled(from.isTtyEnabled());
+        this.setResourceRequestCpu(from.getResourceRequestCpu());
+        this.setResourceRequestMemory(from.getResourceRequestMemory());
+        this.setResourceLimitCpu(from.getResourceLimitCpu());
+        this.setResourceLimitMemory(from.getResourceLimitMemory());
+        this.setShell(from.getShell());
+        this.setEnvVars(from.getEnvVars());
+        this.setPorts(from.getPorts());
+        this.setLivenessProbe(from.getLivenessProbe());
+    }
+
     @DataBoundSetter
     public void setName(String name) {
         this.name = name;
